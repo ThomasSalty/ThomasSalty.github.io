@@ -6,6 +6,6 @@
 # $ ./deploy.sh "Commit message".
 
 if [[ $# -eq 1 ]]
-then ./master.sh "$1" && ./gh-pages.sh "$1"
+then bash ./master.sh "$1" && bash ./gh-pages.sh "$1"
 else echo "Add meg a commit message-t!"
 fi
