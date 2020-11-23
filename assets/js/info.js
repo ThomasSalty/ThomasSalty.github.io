@@ -10,10 +10,10 @@ window.browserInfo = (function() {
     var browser = { name: undefined, version: undefined, os: os, screenSize: screenSize };
 
     /* IE version < 11 */    // We only use fb for IE version < 11, form-submission-handler.js --> function loaded()
-    /*if (M[1] == 'MSIE') {  
+    if (M[1] == 'MSIE') {  
         browser.name = 'IE'; browser.version = parseInt(M[2]);
         return browser;
-    }*/
+    }
 
     /* IE 11 */
     if( /trident/i.test(M[1]) ) {
