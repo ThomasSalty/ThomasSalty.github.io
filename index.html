@@ -157,10 +157,17 @@
                                                     <input type="email" name="email" id="email" spellcheck="false" placeholder="Email címed" required />
                                                     <label for="email">Email</label>
                                                 </div>
+                                                <div><!-- Honeypot field for dumb spambots -->
+                                                    <input type="hidden" name="honeypot" autocomplete="off" />
+                                                </div>
+                                                <div><!-- Honeypot field for smart bots -->
+                                                    <input type="text" name="address" id="address" placeholder="Címed" autocomplete="off" />
+                                                    <label for="address"></label>
+                                                </div>
                                                 <div class="field">	
                                                     <textarea name="message" id="message" rows="5" placeholder="Üzenet..." required></textarea>
                                                     <label for="message">Üzenet</label>
-                                                </div>
+                                                </div>                                                
                                             </div>
                                             <ul class="actions" id="submit-button">
                                                 <li>

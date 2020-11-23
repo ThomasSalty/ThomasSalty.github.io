@@ -2007,6 +2007,17 @@ input, select, textarea {
 					opacity: 0.1;
 				}
 
+    /* Honeypot field for smart spam bots */
+    input#address {        
+        /*position: absolute;
+        top: 0;
+        left: 0;*/
+        opacity: 0;
+        height: 0;
+        width: 0;
+        z-index: -1;
+    }
+
 /* Features */
 
 	.features {

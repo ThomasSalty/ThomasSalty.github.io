@@ -44,8 +44,12 @@
 
 			});
     
-        // Hide items if there's no JS
+        // Hide these items only if there's JS.
             $('#noscript-fb-container').css('display', 'none');
+    
+        // Additional hack for smart spam bots trying to fill this honeypot field.
+            $('#address').attr('tabIndex', 500);
+    
 
 	// Sidebar.
 		if ($sidebar.length > 0) {

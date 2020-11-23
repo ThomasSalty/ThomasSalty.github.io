@@ -8,7 +8,7 @@
         var honeypot;
 
         var fields = Object.keys(elements).filter(function(k) {
-            if (elements[k].name === "honeypot") {
+            if (elements[k].name === "honeypot" || elements[k].name === "address") {  // honeypot for dumb bots and address for smart bots
                 honeypot = elements[k].value;
                 return false;
             }
@@ -174,7 +174,7 @@
             // Let's also show them when browser version < IE 11:
             var noscriptItem = document.querySelector('#noscript-fb-container');
             if ( noscriptItem ) {
-                // noscriptItem.style.display = "flex"; // only needed if main.js:47 doesn't work.
+                noscriptItem.style.display = "flex"; // only needed if main.js:47 doesn't work.
                 noscriptItem.className = "fb-container"; // css class in main.css                
                 // noscriptItem.classList.add('fb-container'); // doesn't work in IE < 10
             }
