@@ -190,8 +190,10 @@
     window.onload = function() {
         var recaptcha = document.querySelector('#g-recaptcha-response')
         if ( recaptcha ) {
-            recaptcha.required = true;
-            console.log('recaptcha: ', recaptcha);
+            recaptcha.required = true;            
+            recaptcha.oninvalid = function(e) {                
+                alert("Kérlek pipáld be hogy nem vagy robot!\n" + e);
+            }
         }
     }
     
