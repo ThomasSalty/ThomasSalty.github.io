@@ -44,7 +44,7 @@
             }
         });
         
-        fields.push('locationData', 'os', 'browser');
+        fields.push('locationData', 'os', 'browser', 'honeypot');
 
         // add form-specific values into the data
         formData.formDataNameOrder = JSON.stringify(fields);
@@ -155,7 +155,7 @@
         var form = document.querySelector("form.gform");    
         
         console.log('form: ', form);
-        var recaptcha = form.querySelector('#g-recaptcha-response')
+        var recaptcha = document.querySelector('#g-recaptcha-response')
         if ( recaptcha ) {
             recaptcha.required = true;
             console.log('recaptcha: ', recaptcha);
