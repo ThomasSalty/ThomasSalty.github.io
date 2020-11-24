@@ -78,7 +78,7 @@
         
         var submitButton = form.querySelector("#submit-button");
         var formElements = form.querySelector(".fields");
-            var contactMessageNodeList = document.querySelectorAll(".contact-message");
+            var contactMessageNodeList = document.querySelectorAll(".contact-message"); /* <h2 class="contact-message">Kapcsolat</h2> */
         var contactMessages = [].slice.call(contactMessageNodeList); // no IE support for Array.from()...
         var reCAPTCHA = document.querySelector('div.g-recaptcha');
         
@@ -188,11 +188,19 @@
     document.addEventListener("DOMContentLoaded", loaded, false);
     
     window.onload = function() {
+        var form = document.querySelector("form.gform");  
+        
         var recaptcha = document.querySelector('#g-recaptcha-response')
         if ( recaptcha ) {
             recaptcha.required = true;            
             recaptcha.oninvalid = function(e) {                
-                alert("Kérlek pipáld be hogy nem vagy robot!\n" + e);
+                var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
+                var allEmpty = inputs.every( function(input) {
+                    return !input.value;    
+                });
+                if ( allEmpty ) {
+                    alert("Kérlek pipáld be hogy nem vagy robot!");
+                }
             }
         }
     }
