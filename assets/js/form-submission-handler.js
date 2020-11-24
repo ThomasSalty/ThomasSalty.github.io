@@ -195,10 +195,8 @@
             recaptcha.required = true;            
             recaptcha.oninvalid = function(e) {                
                 var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
-                var allEmpty = inputs.every( function(input) {
-                    return !input.value;    
-                });
-                if ( !allEmpty ) { // only show this alert when all fields are filled
+                var allFilled = inputs.every( function(input) { return input.value } );
+                if ( allFilled ) { // only show this alert when all fields are filled
                     alert("Kérlek pipáld be hogy nem vagy robot!");
                 }
             }
