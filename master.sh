@@ -7,6 +7,6 @@
 # $ ./master.sh "Commit message"
 
 if [[ $# -eq 1 ]]
-then grunt && git add . && git commit -m "$1" && git push
+then grunt && git commit -am "$1" && git push
 else echo "Add meg a commit message-t!"
 fi
