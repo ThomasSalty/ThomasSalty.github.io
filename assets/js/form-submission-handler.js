@@ -80,6 +80,7 @@
         var formElements = form.querySelector(".fields");
             var contactMessageNodeList = document.querySelectorAll(".contact-message");
         var contactMessages = [].slice.call(contactMessageNodeList); // no IE support for Array.from()...
+        var reCAPTCHA = document.querySelector('div.g-recaptcha');
         
         var contactInner = document.querySelector('#contact > .inner');
         
@@ -116,6 +117,7 @@
                     message.style.display = "none";
                 });
                 submitButton.style.display = "none";
+                reCAPTCHA.style.display = "none";
             }            
             
             // show thank you message
@@ -151,6 +153,13 @@
 
     function loaded() {
         var form = document.querySelector("form.gform");    
+        
+        console.log('form: ', form);
+        var recaptcha = form.querySelector('#g-recaptcha-response')
+        if ( recaptcha ) {
+            recaptcha.required = true;
+            console.log('recaptcha: ', recaptcha);
+        }
         
         // no support for element.dataset (ex.: form.dataset) in IE versions < 11
         // that we need in the "getFormData(form)" function:
