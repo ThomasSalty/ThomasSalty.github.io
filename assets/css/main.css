@@ -2018,6 +2018,18 @@ input, select, textarea {
         z-index: -1;
     }
 
+
+/* reCAPTCHA */
+    .text-center {
+        text-align: center;
+    }
+
+    .g-recaptcha {
+        display: inline-block;
+        margin: 1em 0 2em 0;
+    }
+
+
 /* Features */
 
 	.features {
@@ -2738,6 +2750,10 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
+        
+        flex-direction: column;
+        align-items: center;
+        
 		cursor: default;
 		list-style: none;
 		margin-left: -1em;
