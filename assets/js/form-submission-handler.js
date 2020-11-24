@@ -152,14 +152,7 @@
 
 
     function loaded() {
-        var form = document.querySelector("form.gform");    
-        
-        console.log('form: ', form);
-        var recaptcha = document.querySelector('#g-recaptcha-response')
-        if ( recaptcha ) {
-            recaptcha.required = true;
-            console.log('recaptcha: ', recaptcha);
-        }
+        var form = document.querySelector("form.gform");        
         
         // no support for element.dataset (ex.: form.dataset) in IE versions < 11
         // that we need in the "getFormData(form)" function:
@@ -193,6 +186,14 @@
         form.addEventListener("submit", handleFormSubmit, false);
     } // function loaded()
     document.addEventListener("DOMContentLoaded", loaded, false);
+    
+    window.onload = function() {
+        var recaptcha = document.querySelector('#g-recaptcha-response')
+        if ( recaptcha ) {
+            recaptcha.required = true;
+            console.log('recaptcha: ', recaptcha);
+        }
+    }
     
 
     function disableAllButtons(form) {
