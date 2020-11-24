@@ -198,7 +198,7 @@
                 var allEmpty = inputs.every( function(input) {
                     return !input.value;    
                 });
-                if ( allEmpty ) {
+                if ( !allEmpty ) { // only show this alert when all fields are filled
                     alert("Kérlek pipáld be hogy nem vagy robot!");
                 }
             }
