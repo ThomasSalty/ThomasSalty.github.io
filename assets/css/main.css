@@ -2369,7 +2369,7 @@ input, select, textarea {
 
     .overlay {
         display: block;
-        /*z-index: 999;*/
+        z-index: 999;
         background: rgba(100, 100, 100, 0) url("../../images/loading.gif") center no-repeat;
         filter: drop-shadow(2px 4px 6px black) blur(0.5px);
     }
