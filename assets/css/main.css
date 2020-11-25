@@ -2755,15 +2755,21 @@ input, select, textarea {
 
 /* Actions */
 
+    form ul.actions {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;        
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
 	ul.actions {
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-        
-        flex-direction: column;
-        align-items: center;
-        
 		cursor: default;
 		list-style: none;
 		margin-left: -1em;
