@@ -44,7 +44,7 @@
             }
         });
         
-        fields.push('locationData', 'os', 'browser', 'honeypot');
+        fields.push('locationData', 'os', 'browser');
 
         // add form-specific values into the data
         formData.formDataNameOrder = JSON.stringify(fields);
@@ -80,7 +80,7 @@
         var formElements = form.querySelector(".fields");
             var contactMessageNodeList = document.querySelectorAll(".contact-message"); /* <h2 class="contact-message">Kapcsolat</h2> */
         var contactMessages = [].slice.call(contactMessageNodeList); // no IE support for Array.from()...
-        var reCAPTCHA = document.querySelector('div.g-recaptcha');
+        /*var reCAPTCHA = document.querySelector('div.g-recaptcha');*/
         
         var contactInner = document.querySelector('#contact > .inner');
         
@@ -111,13 +111,13 @@
             form.classList.remove('overlay');            
             
             // hide form
-            if (formElements && contactMessages && submitButton) {
+            if (formElements && contactMessages && submitButton/* && reCAPTCHA*/) {
                 formElements.style.display = "none";
                 contactMessages.forEach( function(message) { // no IE support for arrow functions...
                     message.style.display = "none";
                 });
                 submitButton.style.display = "none";
-                reCAPTCHA.style.display = "none";
+                /*reCAPTCHA.style.display = "none";*/
             }            
             
             // show thank you message
@@ -187,21 +187,21 @@
     } // function loaded()
     document.addEventListener("DOMContentLoaded", loaded, false);
     
-    window.onload = function() {
+/*    window.onload = function() {
         var form = document.querySelector("form.gform");  
         
         var recaptcha = document.querySelector('#g-recaptcha-response')
         if ( recaptcha ) {
             recaptcha.required = true;            
-            /*recaptcha.oninvalid = function(e) {                
+            recaptcha.oninvalid = function(e) {                
                 var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
                 var allFilled = inputs.every( function(input) { return input.value } );
                 if ( allFilled ) { // only show this alert when all fields are filled
                     alert("Kérlek pipáld be hogy nem vagy robot!");
                 }
-            }*/
+            }
         }
-    }
+    }*/
     
 
     function disableAllButtons(form) {
