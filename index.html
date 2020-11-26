@@ -149,12 +149,12 @@
 								<section>
 									<form class="gform" method="post" action="https://script.google.com/macros/s/AKfycbw0nfPlM6bVAEWYs3hBHY1LgzGNXgXyfcAx8_q1/exec">
                                             <div class="fields">
-                                                <div class="field half">
-                                                    <input type="text" name="name" id="name" maxlength="50" placeholder="Neved" required />
+                                                <div class="field half"><!-- autocomplete="disabled" works equally to "chrome-off" in chrome and edge -->
+                                                    <input type="text" name="name" id="name" maxlength="50" placeholder="Neved" autocomplete="disabled" required />
                                                     <label for="name">Név</label>
                                                 </div>
                                                 <div class="field half">		
-                                                    <input type="email" name="email" id="email" spellcheck="false" placeholder="Email címed" required />
+                                                    <input type="email" name="email" id="email" spellcheck="false" placeholder="Email címed" autocomplete="chrome-off" required />
                                                     <label for="email">Email</label>
                                                 </div>
                                                 <div><!-- Honeypot field for dumb spambots -->
