@@ -76,11 +76,11 @@
         //var url = 'https://somewhere.org/i-dont-exist';  // for error testing purposes...
         var xhr = new XMLHttpRequest();
         
-        /*var submitButton = form.querySelector("#submit-button");
+        var submitButton = form.querySelector("#submit-button");
         var formElements = form.querySelector(".fields");
             var contactMessageNodeList = document.querySelectorAll(".contact-message");  // <h2 class="contact-message">Kapcsolat</h2> 
         var contactMessages = [].slice.call(contactMessageNodeList); // no IE support for Array.from()...
-        var reCAPTCHA = document.querySelector('div.g-recaptcha');*/
+        var reCAPTCHA = document.querySelector('div.g-recaptcha');
         
         var contactInner = document.querySelector('#contact > .inner');
         
@@ -109,14 +109,14 @@
             form.classList.remove('overlay');            
             
             // hide form
-            /*if (formElements && contactMessages && submitButton && reCAPTCHA) {
+            if (formElements && contactMessages && submitButton && reCAPTCHA) {
                 formElements.style.display = "none";
                 contactMessages.forEach( function(message) { // no IE support for arrow functions...
                     message.style.display = "none";
                 });
                 submitButton.style.display = "none";
                 reCAPTCHA.style.display = "none";
-            }*/            
+            }            
             
             // show thank you message
             var thankYouMessage = form.querySelector(".thankyou_message");
