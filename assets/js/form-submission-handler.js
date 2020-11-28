@@ -80,9 +80,9 @@
         var formElements = form.querySelector(".fields");
             var contactMessageNodeList = document.querySelectorAll(".contact-message");  // <h2 class="contact-message">Kapcsolat</h2> 
         var contactMessages = [].slice.call(contactMessageNodeList); // no IE support for Array.from()...
-        var reCAPTCHA = document.querySelector('div.g-recaptcha');
+        var reCAPTCHA = document.querySelector('div.g-recaptcha');*/
         
-        var contactInner = document.querySelector('#contact > .inner');*/
+        var contactInner = document.querySelector('#contact > .inner');
         
         xhr.open('POST', url);
         // xhr.withCredentials = true;
