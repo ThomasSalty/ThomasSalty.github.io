@@ -1846,6 +1846,7 @@ input, select, textarea {
     button[type="submit"]:hover span::before {
         opacity: 1;
         right: 0;
+        transform: rotate(360deg);
     }
 
 	input[type="submit"],
