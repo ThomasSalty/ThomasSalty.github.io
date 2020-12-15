@@ -520,7 +520,7 @@ input, select, textarea {
 					opacity: 0.1;
 				}
 
-    /* Honeypot field for smart spam bots */
+/* Honeypot field for smart spam bots */
     input#address {        
         /*position: absolute;
         top: 0;
@@ -1425,6 +1425,7 @@ input, select, textarea {
         max-width: 400px;
         min-width: 250px;
         width: 40%;
+        height: 100%;
     }
     .fb:hover {
         /*outline-color: blue;*/
@@ -1636,6 +1637,7 @@ input, select, textarea {
 		-ms-flex-direction: row;
 		flex-direction: row;
 		min-height: 22.5em;
+        background-color: rgba(80,82,181,1);
 	}
 
 		body.is-ie .spotlights > section {
@@ -1703,11 +1705,11 @@ input, select, textarea {
 			}
 
 		.spotlights > section:nth-child(2) {
-			background-color: rgba(0, 0, 0, 0.05);
+			background-color: rgba(80, 82, 181, 0.8);
 		}
 
 		.spotlights > section:nth-child(3) {
-			background-color: rgba(0, 0, 0, 0.1);
+			background-color: rgba(80, 82, 181, 0.6);
 		}
 
 		.spotlights > section.inactive > .image:before,
@@ -1832,9 +1834,9 @@ input, select, textarea {
 			background-color: #493382;
 		}
 
-		.wrapper.style2 {
+		/*.wrapper.style2 {
 			background-color: #5052b5;
-		}
+		}*/
 
 		.wrapper.style2-alt {
 			background-color: #3e4094;
