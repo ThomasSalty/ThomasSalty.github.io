@@ -32,6 +32,7 @@
         <!-- Defer non critical styles for faster page loads -->                        		
 		<link rel="stylesheet" href="assets/css/main.css" media="print" onload="this.media='all'"/>
 		
+		<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/components-font-awesome@5.9.0/css/all.min.css" /></noscript>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -82,7 +83,9 @@
 							</div>
 						</section>
 						<section>
-							<a href="#" class="image"><img src="images/difficulties.svg" alt="" data-position="center center" /></a>
+							<a href="#" class="image">
+							    <img src="images/difficulties.svg" alt="Nehézségek" data-position="center center" style="display: none;" />
+				            </a>
 							<div class="content">
 								<div class="inner">
 									<h2>Egyedül nem megy?</h2>
@@ -93,9 +96,13 @@
 								</div>
 							</div>
 						</section>
+
+<!-- noscript.css-be meg kell adni a background url-jét ez után (3. child-ként): .spotlights > section:nth-child(2) a.image -->
 <!--
-						<section>
-							<a href="feedback.html" class="image"><img src="images/feedback.min.jpg" alt="Visszajelzés" data-position="center center" /></a>
+						<section>  
+							<a href="feedback.html" class="image">
+							    <img src="images/feedback.min.jpg" alt="Visszajelzés" data-position="center center" display="none"/>
+				            </a>
 							<p><span>Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jon Tyson</a> on <a href="https://unsplash.com/s/photos/feedback?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
 							<div class="content">
 								<div class="inner">
@@ -218,7 +225,7 @@
 							</div>
 							<div id="noscript-fb-container">
                                 <div style="max-width:800px;margin-top:0.8em;width:100%;">A legkönnyebben és a leggyorsabban facebook-on keresztül üzenhetsz nekem, vagy teheted fel kérdéseidet. Ehhez kattints az alábbi gombra.</div><br />
-                                <a target="_blank" href="https://www.facebook.com/tomsoos.1/" class="icon brands fa-facebook-f fb" title="Facebook oldalam (új lapon nyílik)"><noscript>facebook</noscript>
+                                <a target="_blank" href="https://www.facebook.com/tomsoos.1/" class="icon brands fa-facebook-f fb" title="Facebook oldalam (új lapon nyílik)">
                                 </a>
                             </div>
 						</div>
