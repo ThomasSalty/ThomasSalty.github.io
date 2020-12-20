@@ -155,7 +155,7 @@
 
 				}
 			})
-			.each(function() {
+			/*.each(function() {
 
 				var	$this = $(this),
 					$image = $this.find('.image'),
@@ -172,7 +172,7 @@
 				// Hide <img>.
 					$img.hide();
 
-			});
+			})*/;
 
 	// Features.
 		$('.features')
