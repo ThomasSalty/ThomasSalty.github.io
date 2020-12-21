@@ -137,23 +137,31 @@
         align-items:center;
     }
     .fb {
-        display: block;
-        /*outline: inset;
-        outline-color: rgba(228, 219, 219, .7);*/
         border: 2px solid rgba(228, 219, 219, .7);
-        font-size: xx-large;        
-        margin-bottom: 1em;
+        display: block; /* for IE when no JS */
+        font-size: xx-large;
+        height: 100%;
         max-width: 400px;
         min-width: 250px;
-        text-shadow: 4px 4px 4px #3b5998;
+        /*text-shadow: 4px 4px 4px #3b5998;*/
         width: 40%;
     }
     .fb:hover {
-        /*outline-color: blue;*/
         border-color: blue;
     }
     .fb:hover:active {
         transform: translateY(4px);
+    }
+    /* facebook icon svg */
+    .fb svg {
+        height: 1em;
+        vertical-align: text-top;
+    }
+    .fb path {
+        fill: rgba(255,255,255,.55);
+    }
+    .fb:hover path {
+        fill: #fff;
     }
 
 

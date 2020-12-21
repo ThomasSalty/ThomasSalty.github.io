@@ -1416,16 +1416,14 @@ input, select, textarea {
 
     /* Facebook link styles */
     .fb {
-        display: block;
-        /*outline: inset;
-        outline-color: rgba(228, 219, 219, .7);*/
         border: 2px solid rgba(228, 219, 219, .7);
+        display: block;
         font-size: xx-large;
-        text-shadow: 4px 4px 4px #3b5998;
+        height: 100%;
         max-width: 400px;
         min-width: 250px;
+        /*text-shadow: 4px 4px 4px #3b5998;*/
         width: 40%;
-        height: 100%;
     }
     .fb:hover {
         /*outline-color: blue;*/
@@ -1439,6 +1437,19 @@ input, select, textarea {
         display:flex;
         flex-direction:column;
         align-items:center;
+    }
+    /* facebook icon svg */
+    .fb svg {
+        height: 1em;
+        vertical-align: text-top;
+    }
+    .fb path {
+        fill: rgba(255,255,255,.55);
+    }
+    .fb:hover path {
+        fill: #fff;
+        /*stroke: #3b5998;
+        stroke-width: 2;*/
     }
 
 /* Icons */
