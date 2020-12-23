@@ -489,10 +489,6 @@
         min-height: 0;
     }
 
-	.spotlights > section > .image:before {
-		opacity: 0 !important;
-	}
-
 	.spotlights > section > .content > .inner {
 		-moz-transform: none !important;
 		-webkit-transform: none !important;
@@ -510,7 +506,7 @@
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
 		flex-direction: row;
-		min-height: 22.5em;
+		/*min-height: 22.5em;*/
 	}
 
         .spotlights > section:first-child a.image {
@@ -585,11 +581,11 @@
 			}
 
 		.spotlights > section:nth-child(2) {
-			background-color: rgba(0, 0, 0, 0.05);
+			background-color: rgba(80, 82, 181, 0.8);
 		}
 
 		.spotlights > section:nth-child(3) {
-			background-color: rgba(0, 0, 0, 0.1);
+			background-color: rgba(80, 82, 181, 0.6);
 		}
 
 		@media screen and (max-width: 1680px) {
