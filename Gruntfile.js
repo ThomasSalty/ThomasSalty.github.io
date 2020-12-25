@@ -18,9 +18,28 @@ module.exports = function(grunt) {
         cssmin: {
             dist: {
                 files: {
-                    'build/assets/css/main.css': 'assets/css/main.css',
-                    'build/assets/css/critical.css': 'assets/css/critical.css',
-                    'build/assets/css/noscript.css': 'assets/css/noscript.css'                    
+                    'build/assets/css/basic.css': 'assets/css/basic.css',
+                    'build/assets/css/noscript.css': 'assets/css/noscript.css',
+                    'build/assets/css/reset.css': 'assets/css/reset.css',
+                    'build/assets/css/security.css': 'assets/css/security.css',
+                    
+                    'build/assets/css/components/actions.css': 'assets/css/components/actions.css',
+                    'build/assets/css/components/button.css': 'assets/css/components/button.css',
+                    'build/assets/css/components/contact.css': 'assets/css/components/contact.css',
+                    'build/assets/css/components/features.css': 'assets/css/components/features.css',
+                    'build/assets/css/components/footer.css': 'assets/css/components/footer.css',
+                    'build/assets/css/components/form.css': 'assets/css/components/form.css',
+                    'build/assets/css/components/header.css': 'assets/css/components/header.css',
+                    'build/assets/css/components/icon.css': 'assets/css/components/icon.css',
+                    'build/assets/css/components/image.css': 'assets/css/components/image.css',
+                    'build/assets/css/components/intro.css': 'assets/css/components/intro.css',
+                    'build/assets/css/components/logo.css': 'assets/css/components/logo.css',
+                    'build/assets/css/components/menu.css': 'assets/css/components/menu.css',
+                    'build/assets/css/components/section.css': 'assets/css/components/section.css',
+                    'build/assets/css/components/sidebar.css': 'assets/css/components/sidebar.css',
+                    'build/assets/css/components/split.css': 'assets/css/components/split.css',
+                    'build/assets/css/components/spotlights.css': 'assets/css/components/spotlights.css',
+                    'build/assets/css/components/wrapper.css': 'assets/css/components/wrapper.css',
                 }
             }
         },
