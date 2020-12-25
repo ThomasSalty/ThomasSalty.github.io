@@ -18,6 +18,7 @@ module.exports = function(grunt) {
         cssmin: {
             dist: {
                 files: {
+                    'build/assets/css/reset.css': 'assets/css/reset.css',
                     'build/assets/css/main.css': 'assets/css/main.css',
                     'build/assets/css/critical.css': 'assets/css/critical.css',
                     'build/assets/css/noscript.css': 'assets/css/noscript.css'                    
