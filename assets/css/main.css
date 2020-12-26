@@ -404,7 +404,8 @@
     .overlay {
         display: block;
         /*z-index: 999;*/
-        background: rgba(100, 100, 100, 0) url("../../images/loading.min.gif") center no-repeat;
+        background: rgba(100, 100, 100, 0) url("https://res.cloudinary.com/dff1pf5oi/image/upload/v1609004000/loading.min_inflhe.gif") center no-repeat;
+            /*background: rgba(100, 100, 100, 0) url("../../images/loading.min.gif") center no-repeat;*/
         filter: drop-shadow(2px 4px 6px #000) blur(.5px);
     }
 
