@@ -187,23 +187,7 @@
         form.addEventListener("submit", handleFormSubmit, false);
     } // function loaded()
     document.addEventListener("DOMContentLoaded", loaded, false);
-    
-    window.onload = function() {
-        var form = document.querySelector("form.gform");  
         
-        var recaptcha = document.querySelector('#g-recaptcha-response')
-        if ( recaptcha ) {
-            recaptcha.required = true;            
-            recaptcha.oninvalid = function(e) {                
-                var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
-                var allFilled = inputs.every( function(input) { return input.value } );
-                if ( allFilled ) { // only show this alert when all fields are filled
-                    alert("Kérlek pipáld be hogy nem vagy robot!");
-                }
-            }
-        }
-    }
-    
 
     function disableAllButtons(form) {
         var buttons = form.querySelectorAll("button");

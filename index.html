@@ -40,15 +40,29 @@
         <script>
             setTimeout(function() {
                 var a=document,
-                    b=a.querySelector('head'),
-                    c=a.location.protocol;                
-                a=a.createElement("script")
+                    b=a.querySelector('head'),      // b = head                  
+                    c=a.createElement("script"),    // c = script
+                    d,                              // d = form
+                    e;                              // e = recaptcha
                 a.async=!0;
                 a.defer=!0;
-                a.src=c+"//www.google.com/recaptcha/api.js";
+                a.src="https://www.google.com/recaptcha/api.js";
                 b.appendChild(a);
+                d=a.querySelector("form.gform");
+                e=a.querySelector('#g-recaptcha-response');
+                if(e) {
+                    e.required=true;
+                    e.oninvalid=function() {
+                        var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
+                        var allFilled = inputs.every( function(input) { return input.value } );
+                        if ( allFilled ) { // only show this alert when all fields are filled
+                            alert("Kérlek pipáld be hogy nem vagy robot!");
+                        }       
+                    }
+                }
             }, 3000);
-        </script>        
+        </script>
+                
 		
 		<!-- No JS styles -->
 		<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/components-font-awesome@5.9.0/css/all.min.css" /></noscript>
