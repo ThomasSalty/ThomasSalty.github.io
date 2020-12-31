@@ -37,16 +37,17 @@
 		        
         <!-- reCAPTCHA API -->
         <!--<script async defer src="https://www.google.com/recaptcha/api.js"></script>-->
-        <script defer>
-            (function(a) {
-                var b=a.querySelector('head'),
-                    c=a.location.protocol;
-                a=a.createElement("script");
+        <script>
+            setTimeout(function() {
+                var a=document,
+                    b=a.querySelector('head'),
+                    c=a.location.protocol;                
+                a=a.createElement("script")
                 a.async=!0;
                 a.defer=!0;
                 a.src=c+"//www.google.com/recaptcha/api.js";
-                b.appendChild(a)
-            })(document);
+                b.appendChild(a);
+            }, 3000);
         </script>        
 		
 		<!-- No JS styles -->
