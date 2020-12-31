@@ -181,7 +181,24 @@
                 noscriptItem.className = "fb-container"; // css class in main.css                
                 // noscriptItem.classList.add('fb-container'); // doesn't work in IE < 10
             }
-        } 
+        }
+        
+        function required() {
+            var r=document.querySelector('#g-recaptcha-response');
+            if (r) {
+                r.required=true;
+                r.oninvalid=function() {
+                    var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
+                    var allFilled = inputs.every( function(input) { return input.value } );
+                    if ( allFilled ) { // only show this alert when all fields are filled
+                        alert("Kérlek pipáld be hogy nem vagy robot!");
+                    }       
+                }
+                window.removeEventListener('scroll', required);
+            }
+        }
+        window.addEventListener('scroll', required);
+        
         
         // bind to the submit event of our form        
         form.addEventListener("submit", handleFormSubmit, false);

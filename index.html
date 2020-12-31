@@ -47,21 +47,8 @@
                 c.async=!0;
                 c.defer=!0;
                 c.src="https://www.google.com/recaptcha/api.js";
-                b.appendChild(c);                                  
+                b.appendChild(c);      
             }, 1);
-            setTimeout(function() {
-                var r=document.querySelector('#g-recaptcha-response');
-                if (r) {
-                    r.required=true;
-                    r.oninvalid=function() {
-                        var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
-                        var allFilled = inputs.every( function(input) { return input.value } );
-                        if ( allFilled ) { // only show this alert when all fields are filled
-                            alert("Kérlek pipáld be hogy nem vagy robot!");
-                        }       
-                    }  
-                }
-            }, 1000);
         </script>
                 
 		
@@ -336,7 +323,7 @@
                     <!--<script src="assets/js/info.js"></script>-->
 			 
             <!-- form-submission-handler.min.js-->
-            <script data-cfasync="false" src="https://res.cloudinary.com/dff1pf5oi/raw/upload/v1609019500/js/form-submission-handler_tbz1bl.js"></script>
+            <script data-cfasync="false" src="https://res.cloudinary.com/dff1pf5oi/raw/upload/v1609448264/js/form-submission-handler_xljbcp.js"></script>
                     <!--<script data-cfasync="false" src="assets/js/form-submission-handler.js"></script>-->
         
             <script>function getIP(json){window.ip=json.ip;}</script>
