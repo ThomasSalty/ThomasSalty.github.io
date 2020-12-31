@@ -37,29 +37,29 @@
 		        
         <!-- reCAPTCHA API -->
         <!--<script async defer src="https://www.google.com/recaptcha/api.js"></script>-->
-        <!-- b = head, c = script, d = form, e = recaptcha -->
+        <!-- b = head, c = script, d = form -->
         <script>
             setTimeout(function() {
                 var a=document,
                     b=a.querySelector('head'),      
                     c=a.createElement("script"),    
-                    d,                              
-                    e;                              
+                    d=a.querySelector("form.gform");
                 c.async=!0;
                 c.defer=!0;
                 c.src="https://www.google.com/recaptcha/api.js";
-                b.appendChild(c);
-                d=a.querySelector("form.gform");
-                e=a.querySelector('#g-recaptcha-response');
-                if(e) {
-                    e.required=true;
-                    e.oninvalid=function() {
+                b.appendChild(c);                                  
+            }, 100);
+            setTimeout(function() {
+                var r=document.querySelector('#g-recaptcha-response');
+                if (r) {
+                    r.required=true;
+                    r.oninvalid=function() {
                         var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
                         var allFilled = inputs.every( function(input) { return input.value } );
                         if ( allFilled ) { // only show this alert when all fields are filled
                             alert("Kérlek pipáld be hogy nem vagy robot!");
                         }       
-                    }
+                    }  
                 }
             }, 3000);
         </script>
