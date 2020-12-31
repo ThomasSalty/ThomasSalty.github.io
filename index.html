@@ -36,7 +36,18 @@
 		        <!--<link rel="stylesheet" href="assets/css/main.css" media="print" onload="this.media='all'"/>-->
 		        
         <!-- reCAPTCHA API -->
-        <script async defer src="https://www.google.com/recaptcha/api.js"></script>
+        <!--<script async defer src="https://www.google.com/recaptcha/api.js"></script>-->
+        <script defer>
+            (function(a) {
+                var b=a.querySelector('head'),
+                    c=a.location.protocol;
+                a=a.createElement("script");
+                a.async=!0;
+                a.defer=!0;
+                a.src=c+"//www.google.com/recaptcha/api.js";
+                b.appendChild(a)
+            })(document);
+        </script>        
 		
 		<!-- No JS styles -->
 		<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/components-font-awesome@5.9.0/css/all.min.css" /></noscript>
