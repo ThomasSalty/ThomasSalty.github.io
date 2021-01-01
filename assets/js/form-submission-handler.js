@@ -183,16 +183,19 @@
             }
         }
         
+        // if the user scrolled below the advantages section add validation logic to recaptcha
         function required() {
-            var r=document.querySelector('#g-recaptcha-response');
-            if (r) {
-                r.required=true;
-                r.oninvalid=function() {
-                    var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
-                    var allFilled = inputs.every( function(input) { return input.value } );
-                    if ( allFilled ) { // only show this alert when all fields are filled
-                        alert("Kérlek pipáld be hogy nem vagy robot!");
-                    }       
+            if (window.scrollY > document.querySelector('#advantages').offsetTop) {
+                var r=document.querySelector('#g-recaptcha-response');
+                if (r) {
+                    r.required=true;
+                    r.oninvalid=function() {
+                        var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
+                        var allFilled = inputs.every( function(input) { return input.value } );
+                        if ( allFilled ) { // only show this alert when all fields are filled
+                            alert("Kérlek pipáld be hogy nem vagy robot!");
+                        }       
+                    }
                 }
                 window.removeEventListener('scroll', required);
             }

@@ -37,18 +37,17 @@
 		        
         <!-- reCAPTCHA API -->
         <!--<script async defer src="https://www.google.com/recaptcha/api.js"></script>-->
-        <!-- b = head, c = script, d = form -->
+        <!-- a = document, b = head, c = script -->
         <script>
             setTimeout(function() {
                 var a=document,
                     b=a.querySelector('head'),      
-                    c=a.createElement("script"),    
-                    d=a.querySelector("form.gform");
+                    c=a.createElement("script");
                 c.async=!0;
                 c.defer=!0;
                 c.src="https://www.google.com/recaptcha/api.js";
                 b.appendChild(c);      
-            }, 1);
+            }, 1000);
         </script>
                 
 		
@@ -323,7 +322,7 @@
                     <!--<script src="assets/js/info.js"></script>-->
 			 
             <!-- form-submission-handler.min.js-->
-            <script data-cfasync="false" src="https://res.cloudinary.com/dff1pf5oi/raw/upload/v1609448264/js/form-submission-handler_xljbcp.js"></script>
+            <script data-cfasync="false" src="https://res.cloudinary.com/dff1pf5oi/raw/upload/v1609536648/js/form-submission-handler_flkcrl.js"></script>
                     <!--<script data-cfasync="false" src="assets/js/form-submission-handler.js"></script>-->
         
             <script>function getIP(json){window.ip=json.ip;}</script>
