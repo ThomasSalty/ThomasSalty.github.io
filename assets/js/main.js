@@ -193,5 +193,10 @@
 
 				}
 			});
+    
+    // IP address.
+        $.get("https://ipinfo.io", function (response) {
+            window.ip = response.ip;            
+        }, "jsonp");
 
 })(jQuery);
