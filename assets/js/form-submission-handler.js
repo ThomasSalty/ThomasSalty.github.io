@@ -181,25 +181,44 @@
                 noscriptItem.className = "fb-container"; // css class in main.css                
                 // noscriptItem.classList.add('fb-container'); // doesn't work in IE < 10
             }
-        }
+        }            
         
-        // if the user scrolled below the advantages section add validation logic to recaptcha
-        function required() {
-            if (window.scrollY > document.querySelector('#advantages').offsetTop) {
-                var r=document.querySelector('#g-recaptcha-response');
-                if (r) {
-                    r.required=true;
-                    r.oninvalid=function() {
-                        var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
-                        var allFilled = inputs.every( function(input) { return input.value } );
-                        if ( allFilled ) { // only show this alert when all fields are filled
-                            alert("Kérlek pipáld be hogy nem vagy robot!");
-                        }       
-                    }
-                }
+        // if the user scrolled below the advantages section or navigated to #contact section add validation logic to recaptcha
+        function required() {            
+            if (window.scrollY > document.querySelector('#advantages').offsetTop || window.location.hash == "#contact") {
+                
+                // remove scroll event as soon as the above condition is met...
                 window.removeEventListener('scroll', required);
-            }
-        }
+                
+                // check if recaptcha is in the DOM at every 100 ms.
+                var exists = setInterval(function() {                    
+                    var r=document.querySelector('#g-recaptcha-response');
+                    if (r) {                        
+                        r.required=true;
+                        r.oninvalid=function() {
+                            var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
+                            var allFilled = inputs.every( function(input) { return input.value } );
+                            if ( allFilled ) { // only show this alert when all fields are filled
+                                alert("Kérlek pipáld be hogy nem vagy robot!");
+                            }       
+                        }
+
+                        // Get the IP address as well if we are here.
+                        $.get("https://ipinfo.io", function (response) {
+                            window.ip = response.ip;            
+                        }, "jsonp");
+                        /*$.ajax({
+                            url: "https://ipinfo.io",
+                            success: function (response) { window.ip = response.ip; },
+                            dataType: "jsonp"
+                            // timeout: 1000
+                        });*/
+
+                        clearInterval(exists);
+                    }
+                }, 100); 
+            } // end of main if
+        } // end of function required
         window.addEventListener('scroll', required);
         
         
