@@ -181,7 +181,8 @@
                 noscriptItem.className = "fb-container"; // css class in main.css                
                 // noscriptItem.classList.add('fb-container'); // doesn't work in IE < 10
             }
-        }            
+        }             
+        
         
         // if the user scrolled below the advantages section or navigated to #contact section add validation logic to recaptcha
         function required() {            
@@ -220,6 +221,10 @@
             } // end of main if
         } // end of function required
         window.addEventListener('scroll', required);
+        
+        // In case of refreshing the browser when the URL has #contact in it.
+        if (sessionStorage.getItem('reloaded')) { required(); }
+        else sessionStorage.setItem('reloaded', 'true');
         
         
         // bind to the submit event of our form        
