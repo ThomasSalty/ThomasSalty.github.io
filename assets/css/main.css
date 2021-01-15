@@ -58,6 +58,11 @@
         text-align: center;
     }
 
+    /* Used with #about and #contact submit buttons */
+    .center-flex {
+        justify-content: center;
+    }
+
     .g-recaptcha {
         display: inline-block;
         margin: 1em 0 2em 0;
@@ -745,11 +750,9 @@
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
-		display: flex;        
-        flex-direction: column;
-        align-items: center;
+		display: flex;
     }
-    
+
 
 	ul.actions {
 		display: -moz-flex;
@@ -820,6 +823,19 @@
 				width: 100%;
 			}
 
+
+        @media screen and (min-width: 481px) {
+            
+            #about ul.actions li + li {
+                margin-left: 4em;
+            }
+
+            ul.actions li a {
+                min-width: 160px;
+            }
+        }
+
+
 		@media screen and (max-width: 480px) {
 
 			ul.actions:not(.fixed) {
@@ -870,6 +886,8 @@
 						}
 
 		}
+
+
 
 /* Contact */
 
