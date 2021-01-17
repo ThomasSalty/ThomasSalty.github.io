@@ -742,6 +742,17 @@
 				width: 100%;
 			}
 
+        #introduction .image {
+            background-image: url(https://res.cloudinary.com/dff1pf5oi/image/upload/v1609003999/images/la.min_ohqsym.jpg);
+            background-position: right center;            
+        }
+
+        #help .image {
+            background-image: url(https://res.cloudinary.com/dff1pf5oi/image/upload/v1609004000/images/difficulties.min_zltkqr.svg);
+            background-position: center center;
+        }
+
+
 
 
 /* Actions */
