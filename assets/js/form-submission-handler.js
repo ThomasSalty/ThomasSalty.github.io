@@ -46,7 +46,8 @@
         
         fields.push('locationData', 'os', 'browser');
 
-        var reCAPTCHA = document.querySelector('form #g-recaptcha-response');
+        /*var reCAPTCHA = document.querySelector('form #g-recaptcha-response');
+        formData.reCAPTCHA = reCAPTCHA;*/
         
         // add form-specific values into the data
         formData.formDataNameOrder = JSON.stringify(fields);
@@ -55,7 +56,6 @@
         formData.locationData = 'https://tools.keycdn.com/geo.json?host=' + window.ip; // egy stringként adom vissza egyszerűen...
         formData.os = window.browserInfo.os;
         formData.browser = window.browserInfo.name + " " + window.browserInfo.version + " (" + window.browserInfo.screenSize + ")";
-        formData.reCAPTCHA = reCAPTCHA;
 
         return {data: formData, honeypot: honeypot};
     } // function getFormData(form)
