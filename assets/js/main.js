@@ -23,12 +23,7 @@
 		if (browser.name == 'ie')
 			$body.addClass('is-ie');
 
-	// Play initial animations on page load.
-		/*$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});*/
+	// Play initial animations on page load.		
         window.addEventListener('DOMContentLoaded', function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');

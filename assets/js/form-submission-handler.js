@@ -9,7 +9,9 @@
 
         var fields = Object.keys(elements).filter(function(k) {
             if (elements[k].name === "honeypot" || elements[k].name === "address") {  // honeypot for dumb bots and address for smart bots
-                honeypot = true;
+                if (elements[k].value !== "")
+                    honeypot = true;
+                
                 return false;
             }
             return true;
