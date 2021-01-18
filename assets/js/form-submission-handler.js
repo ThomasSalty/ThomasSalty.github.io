@@ -13,7 +13,9 @@
                     honeypot = true;
                 
                 return false;
-            }
+            } else if (elements[k].name === "g-recaptcha-response")
+                return false;
+            
             return true;
         }).map(function(k) {
             if(elements[k].name !== undefined) {
@@ -48,17 +50,17 @@
         
         fields.push('locationData', 'os', 'browser');
 
-        var reCAPTCHA = document.querySelector('form #g-recaptcha-response');
+        /*var reCAPTCHA = document.querySelector('form #g-recaptcha-response');
+        formData.reCAPTCHA = reCAPTCHA;*/
         
         // add form-specific values into the data
         formData.formDataNameOrder = JSON.stringify(fields);
         formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
-        formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+        // formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
         formData.locationData = 'https://tools.keycdn.com/geo.json?host=' + window.ip; // egy stringként adom vissza egyszerűen...
         formData.os = window.browserInfo.os;
         formData.browser = window.browserInfo.name + " " + window.browserInfo.version + " (" + window.browserInfo.screenSize + ")";
-        formData.reCAPTCHA = reCAPTCHA;
-
+        
         return {data: formData, honeypot: honeypot};
     } // function getFormData(form)
 
