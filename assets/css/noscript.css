@@ -136,6 +136,11 @@
         flex-direction:column;
         align-items:center;
     }
+    #noscript-fb-container div {
+        max-width: 800px;
+        margin: .8em 0;
+        width: 100%; /* For small screens on IE */
+    }
     .fb {
         border: 2px solid rgba(228, 219, 219, .7);
         display: block; /* for IE when no JS */
