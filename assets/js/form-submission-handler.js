@@ -189,8 +189,12 @@
         
         
         // if the user scrolled below the advantages section or navigated to #contact section add validation logic to recaptcha
-        function required() {            
-            if (window.scrollY > document.querySelector('#advantages').offsetTop || window.location.hash == "#contact") {
+        function required() {   
+            // window.scrollY does NOT work in IE!
+            //      The pageYOffset property is an alias for the scrollY property.
+            //          window.pageYOffset === window.scrollY; // always true
+            //      For cross-browser compatibility, use window.pageYOffset instead of window.scrollY.
+            if (window.pageYOffset > document.querySelector('#advantages').offsetTop || window.location.hash == "#contact") {
                 
                 // remove scroll event as soon as the above condition is met...
                 window.removeEventListener('scroll', required);
