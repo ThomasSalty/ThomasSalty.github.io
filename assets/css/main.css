@@ -68,7 +68,7 @@
         margin: 1em 0 2em 0;
     }
 
-    #g-recaptcha-response {
+/*    #g-recaptcha-response {
         display: block !important;
         position: absolute;
         margin: -78px 0 0 0 !important;
@@ -76,7 +76,17 @@
         height: 76px !important;
         z-index: -999999;
         opacity: 0;
-    }
+    }*/
+
+/*    #g-recaptcha-response {
+        display: block;
+        position: absolute;
+        margin: -78px 0 0 0;
+        width: 302px;
+        height: 76px;
+        z-index: -999999;
+        opacity: 0;
+    }*/
 
 
 /* Features */
@@ -511,7 +521,7 @@
         color: #e32;
     }
 
-	input[type="checkbox"],
+	/*input[type="checkbox"],
 	input[type="radio"] {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -589,26 +599,26 @@
 
 	input[type="radio"] + label:before {
 		border-radius: 100%;
-	}
+	}*/
 
 	::-webkit-input-placeholder {
-		color: rgba(255, 255, 255, 0.35) !important;
+		color: rgba(255, 255, 255, 0.35);
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: rgba(255, 255, 255, 0.35) !important;
+		color: rgba(255, 255, 255, 0.35);
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: rgba(255, 255, 255, 0.35) !important;
+		color: rgba(255, 255, 255, 0.35);
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
 		color: rgba(255, 255, 255, 0.35) !important;
-		opacity: 1.0;
+		/*opacity: 1.0;*/
 	}
 
 /* Icon */
@@ -627,7 +637,7 @@
 			font-variant: normal;
 			text-rendering: auto;
 			line-height: 1;
-			text-transform: none !important;
+			text-transform: none;
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 400;
 		}
@@ -893,7 +903,7 @@
 				-ms-flex-direction: column;
 				flex-direction: column;
 				margin-left: 0;
-				width: 100% !important;
+				width: 100%;
 			}
 
 				ul.actions:not(.fixed) li {
@@ -1268,7 +1278,7 @@
         @media screen and (max-width: 736px) and (orientation: landscape) {
             .spotlights > section > .image {
                 width: 100%;
-                height: 100vh !important;
+                height: 100vh;
             }    
         }
 
