@@ -18,6 +18,9 @@
 			small:    [ '481px',   '736px'  ],
 			xsmall:   [ null,      '480px'  ]
 		});
+    
+    // Add this class from JS so it's not there when there's no JS.
+    $body.addClass('is-preload');
 
 	// Hack: Enable IE flexbox workarounds.
 		if (browser.name == 'ie')

@@ -707,19 +707,6 @@
 		position: relative;
 	}
 
-		.image img {
-			border-radius: 0.25em;
-			display: block;
-		}
-
-		.image.left, .image.right {
-			max-width: 40%;
-		}
-
-			.image.left img, .image.right img {
-				width: 100%;
-			}
-
 		.image.left {
 			float: left;
 			margin: 0 1.5em 1em 0;
@@ -735,33 +722,17 @@
 		.image.fit {
 			display: block;
 			margin: 0 0 2em 0;
-			width: 100%;
 		}
 
-			.image.fit img {
-				width: 100%;
-			}
+            .image.fit > img {
+                width: 100%;
+            }
 
 		.image.main {
 			display: block;
 			margin: 0 0 3em 0;
 			width: 100%;
 		}
-
-			.image.main img {
-				width: 100%;
-			}
-
-        #introduction .image {
-            background-image: url(https://res.cloudinary.com/dff1pf5oi/image/upload/v1609003999/images/la.min_ohqsym.jpg);
-            background-position: right center;            
-        }
-
-        #help .image {
-            background-image: url(https://res.cloudinary.com/dff1pf5oi/image/upload/v1609004000/images/difficulties.min_zltkqr.svg);
-            background-position: center center;
-        }
-
 
 
 
@@ -1163,11 +1134,6 @@
             /*height: auto;*/
 		}
 
-			.spotlights > section > .image img {
-				border-radius: 0;
-				display: block;
-			}
-
 			.spotlights > section > .image:before {
 				-moz-transition: opacity 1s ease;
 				-webkit-transition: opacity 1s ease;
@@ -1214,13 +1180,29 @@
 				opacity: 1;
 			}
 
+            .spotlights > section:first-child a.image {
+                background-image: url(https://res.cloudinary.com/dff1pf5oi/image/upload/v1609003999/images/la.min_ohqsym.jpg);
+                background-position: right center;  
+            }
+
 		.spotlights > section:nth-child(2) {
 			background-color: rgba(80, 82, 181, 0.8);
 		}
 
-		.spotlights > section:nth-child(3) {
+            .spotlights > section:nth-child(2) a.image {
+                background-image: url(https://res.cloudinary.com/dff1pf5oi/image/upload/v1609004000/images/difficulties.min_zltkqr.svg);
+                background-position: center center;
+            }
+
+		/*.spotlights > section:nth-child(3) {
 			background-color: rgba(80, 82, 181, 0.6);
-		}
+		}*/
+
+            /*.spotlights > section:nth-child(3) a.image {
+                background-image: url();
+                background-position: center center;
+            }*/
+
 
 		.spotlights > section.inactive > .image:before,
 		body.is-preload .spotlights > section > .image:before {
