@@ -544,6 +544,13 @@
         transition: all 0.5s;   
         width: 200px;
     }
+        @media screen and (min-width: 1680px) {
+
+			button[type="submit"] {
+				font-size: .6em;
+			}
+
+		}
     button[type="submit"] span {
         display: inline-block;
         position: relative;
