@@ -55,7 +55,7 @@
         
         // add form-specific values into the data
         formData.formDataNameOrder = JSON.stringify(fields);
-        formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+        formData.formGoogleSheetName = /* form.dataset.sheet || */ "responses"; // default sheet name
         // formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
         formData.locationData = 'https://tools.keycdn.com/geo.json?host=' + window.ip; // egy stringként adom vissza egyszerűen...
         formData.os = window.browserInfo.os;
@@ -159,13 +159,12 @@
     function loaded() {
         var form = document.querySelector("form.gform");        
         
-        // no support for element.dataset (ex.: form.dataset) in IE versions < 11
-        // that we need in the "getFormData(form)" function:
-        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/dataset
+        // no support for "required" attribute on form elements in IE versions < 10        
         // because of this we can't send the email in those browsers so no form is provided for them...
-        if (window.browserInfo.name === 'IE' && window.browserInfo.version < 11) {         
-            // we use .script class to show elements when we have JS.
-            // we might have JS but cannot send emails in IE < 11 so we hide these elements...
+        if (window.browserInfo.name === 'IE' && window.browserInfo.version < 10) {         
+            // we normally use .script class to show elements when we have JS.
+            // we might have JS but cannot send emails in IE < 10 so we hide these elements.           
+            // (we could send emails if we manually validated all form elements but usage of IE 9 and older is very small.)
             var scriptNodeList = document.querySelectorAll(".script");
             var itemsToHide = [].slice.call(scriptNodeList); // no IE support for Array.from()...
             
@@ -178,10 +177,10 @@
             
             // the same thing with the .noscript class, we use it show elements
             // when we have no JS.
-            // Let's also show them when browser version < IE 11:
+            // Let's also show them when browser version < IE 10:
             var noscriptItem = document.querySelector('#noscript-fb-container');
             if ( noscriptItem ) {
-                noscriptItem.style.display = "flex"; // only needed if main.js:47 doesn't work.
+                noscriptItem.style.display = "flex";
                 noscriptItem.className = "fb-container"; // css class in main.css                
                 // noscriptItem.classList.add('fb-container'); // doesn't work in IE < 10
             }
@@ -201,10 +200,10 @@
                 
                 // check if recaptcha is in the DOM at every 100 ms.
                 var exists = setInterval(function() {                    
-                    var r=document.querySelector('#g-recaptcha-response');
+                    var r = document.querySelector('#g-recaptcha-response');
                     if (r) {                        
                         r.required=true;
-                        r.oninvalid=function() {
+                        r.oninvalid=function() { // No IE support for oninvalid at all BUT all other browsers support it...
                             var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
                             var allFilled = inputs.every( function(input) { return input.value } );
                             if ( allFilled ) { // only show this alert when all fields are filled
