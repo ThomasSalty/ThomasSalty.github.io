@@ -65,7 +65,6 @@
     } // function getFormData(form)
 
 
-
     function handleFormSubmit(event) {  // handles form submit without any jquery
         event.preventDefault();           // we are submitting via xhr below         
         
@@ -184,64 +183,63 @@
                 noscriptItem.className = "fb-container"; // css class in main.css                
                 // noscriptItem.classList.add('fb-container'); // doesn't work in IE < 10
             }
-        }             
-        
-        
-        // if the user scrolled below the advantages section or navigated to #contact section add validation logic to recaptcha
-        function required() {   
-            // window.scrollY does NOT work in IE!
-            //      The pageYOffset property is an alias for the scrollY property.
-            //          window.pageYOffset === window.scrollY; // always true
-            //      For cross-browser compatibility, use window.pageYOffset instead of window.scrollY.
-            if (window.pageYOffset > document.querySelector('#advantages').offsetTop || window.location.hash == "#contact") {
-                
-                // remove scroll event as soon as the above condition is met...
-                window.removeEventListener('scroll', required);
-                
-                // check if recaptcha is in the DOM at every 100 ms.
-                var exists = setInterval(function() {                    
-                    var r = document.querySelector('#g-recaptcha-response');
-                    if (r) {                        
-                        r.required=true;
-                        r.oninvalid=function() { // No IE support for oninvalid at all BUT all other browsers support it...
-                            var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
-                            var allFilled = inputs.every( function(input) { return input.value } );
-                            if ( allFilled ) { // only show this alert when all fields are filled
-                                alert("Kérlek pipáld be hogy nem vagy robot!");
-                            }       
-                        }
-
-                        // Get the IP address as well if we are here.
-                        $.get("https://ipinfo.io", function (response) {
-                            window.ip = response.ip;            
-                        }, "jsonp");
-                        /*$.ajax({
-                            url: "https://ipinfo.io",
-                            success: function (response) { window.ip = response.ip; },
-                            dataType: "jsonp"
-                            // timeout: 1000
-                        });*/
-                        
-                        /* JSONP stands for JSON with Padding. It is a historical JavaScript technique for requesting a file from another domain can cause problems,
-                        due to cross-domain policy. Requesting an external script from another domain does not have this problem. JSONP uses this advantage,
-                        and request files using the script tag instead of the XMLHttpRequest object. */
-
-                        clearInterval(exists);
-                    }
-                }, 100); 
-            } // end of main if
-        } // end of function required
-        window.addEventListener('scroll', required);
+        }   
         
         // In case of refreshing the browser when the URL has #contact in it.
         if (sessionStorage.getItem('reloaded')) { required(); }
         else sessionStorage.setItem('reloaded', 'true');
-        
-        
+                
         // bind to the submit event of our form        
         form.addEventListener("submit", handleFormSubmit, false);
     } // function loaded()
     document.addEventListener("DOMContentLoaded", loaded, false);
+    
+    
+    // if the user scrolled below the advantages section or navigated to #contact section add validation logic to recaptcha
+    function required() {   
+        // window.scrollY does NOT work in IE!
+        //      The pageYOffset property is an alias for the scrollY property.
+        //          window.pageYOffset === window.scrollY; // always true
+        //      For cross-browser compatibility, use window.pageYOffset instead of window.scrollY.
+        if (window.pageYOffset > document.querySelector('#advantages').offsetTop || window.location.hash == "#contact") {
+
+            // remove scroll event as soon as the above condition is met...
+            window.removeEventListener('scroll', required);
+
+            // check if recaptcha is in the DOM at every 100 ms.
+            var exists = setInterval(function() {                    
+                var r = document.querySelector('#g-recaptcha-response');
+                if (r) {                        
+                    r.required=true;
+                    r.oninvalid=function() { // No IE support for oninvalid at all BUT all other browsers support it...
+                        var inputs = [ document.querySelector('#name'), document.querySelector('#email'), document.querySelector('#message') ];
+                        var allFilled = inputs.every( function(input) { return input.value } );
+                        if ( allFilled ) { // only show this alert when all fields are filled
+                            alert("Kérlek pipáld be hogy nem vagy robot!");
+                        }       
+                    }
+
+                    // Get the IP address as well if we are here.
+                    $.get("https://ipinfo.io", function (response) {
+                        window.ip = response.ip;            
+                    }, "jsonp");
+                    /*$.ajax({
+                        url: "https://ipinfo.io",
+                        success: function (response) { window.ip = response.ip; },
+                        dataType: "jsonp"
+                        // timeout: 1000
+                    });*/
+
+                    /* JSONP stands for JSON with Padding. It is a historical JavaScript technique for requesting a file from another domain can cause problems,
+                    due to cross-domain policy. Requesting an external script from another domain does not have this problem. JSONP uses this advantage,
+                    and request files using the script tag instead of the XMLHttpRequest object. */
+
+                    clearInterval(exists);
+                }
+            }, 100); 
+        } // end of main if
+    } // end of function required
+    window.addEventListener('scroll', required);
         
 
     function disableAllButtons(form) {
