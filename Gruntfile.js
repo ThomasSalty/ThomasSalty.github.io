@@ -20,6 +20,7 @@ module.exports = function(grunt) {
                 files: {
                     'build/assets/css/critical.css': 'assets/css/critical.css',
                     'build/assets/css/main.css': 'assets/css/main.css',
+                    'build/assets/css/about.css': 'assets/css/about.css',
                     'build/assets/css/noscript.css': 'assets/css/noscript.css'
                 }
             }
