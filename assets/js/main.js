@@ -19,7 +19,8 @@
 			xsmall:   [ null,      '480px'  ]
 		});
     
-    // Add this class from JS so it's not there when there's no JS.
+    // Add this class from JS instead of on the html,
+    //    so it doesn't stay there when there's no JS.
     $body.addClass('is-preload');
 
 	// Hack: Enable IE flexbox workarounds.
@@ -38,7 +39,7 @@
 	// Forms.
 
 		// Hack: Activate non-input submits.
-			$('form').on('click', '.submit', function(event) {
+			/*$('form').on('click', '.submit', function(event) {
 
 				// Stop propagation, default.
 					event.stopPropagation();
@@ -47,7 +48,7 @@
 				// Submit form.
 					$(this).parents('form').submit();
 
-			});
+			});*/
     
         // Hide these items only if there's JS.
             $('#noscript-fb-container').css('display', 'none');
