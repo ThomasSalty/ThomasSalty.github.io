@@ -691,7 +691,7 @@
 				width: 100%;
 			}*/
 
-        @media screen and (min-width: 481px) {
+        @media screen and (min-width: 481px) and (orientation: portrait) {
 
             ul.actions li a {
                 min-width: 200px;
@@ -712,7 +712,7 @@
             }
         }
 
-        @media screen and (min-width: 830px) {
+        @media screen and (min-width: 830px) and (orientation: portrait) {
             
             #about ul.actions li + li {
                 margin-left: 8em;
