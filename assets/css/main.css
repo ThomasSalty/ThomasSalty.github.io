@@ -1025,7 +1025,7 @@
 			-webkit-justify-content: center;
 			-ms-justify-content: center;
 			justify-content: center;
-			width: 50em;
+			width: 60%;
 			-ms-flex: 1;
 		}
 
@@ -1051,7 +1051,7 @@
 		}
 
             .spotlights > section:nth-child(2) a.image {
-                background-image: url(https://res.cloudinary.com/dff1pf5oi/image/upload/v1609004000/images/difficulties.min_zltkqr.svg);
+                background-image: url(https://res.cloudinary.com/dff1pf5oi/image/upload/v1613509413/images/difficulties.min_gqmfik.svg);
                 background-position: center center;
             }
 
@@ -1089,7 +1089,7 @@
 
         @media screen and (max-width: 980px) and (orientation: landscape) {
             .spotlights > section > .image {
-                width: 70%;
+                width: 40%;
             }    
         }
 
