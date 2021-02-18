@@ -9,7 +9,7 @@ window.browserInfo = (function() {
 
     var browser = { name: undefined, version: undefined, os: os, screenSize: screenSize };
 
-    /* IE version < 11 */    // We only use fb for IE version < 11, form-submission-handler.js --> function loaded()
+    /* IE version < 11 */
     if (M[1] == 'MSIE') {  
         browser.name = 'IE'; browser.version = parseInt(M[2]);
         return browser;
@@ -32,9 +32,8 @@ window.browserInfo = (function() {
                 browser.name = "Chromium", browser.version = M[2];
                 return browser;
             }
-        }
-
-        if( tem !== null) {   
+            
+        } else {   
             browser.name = tem[1].replace('OPR', 'Opera').replace('Edg', 'Edge');
             browser.version = tem[2];
             return browser;
