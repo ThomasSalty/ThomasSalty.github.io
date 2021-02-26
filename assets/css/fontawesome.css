@@ -1,12 +1,13 @@
 @font-face {
   font-family: 'Font Awesome 5 Free';
-  src:  url('../fonts/icomoon.woff?5p0vit') format('woff');
+  /* src:  url('../fonts/icomoon.woff?5p0vit') format('woff'); */
+  src: url('https://res.cloudinary.com/dff1pf5oi/raw/upload/v1614375221/fonts/icomoon_cpffrt.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   /* font-display: block; */
 }
 /*
-[class^="icon-"], [class*=" icon-"] {  
+[class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
@@ -15,7 +16,7 @@
   text-transform: none;
   line-height: 1;
 
-  
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
