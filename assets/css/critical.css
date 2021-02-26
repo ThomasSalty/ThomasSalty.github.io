@@ -445,16 +445,16 @@
     button[type="submit"] span {
         display: inline-block;
         position: relative;
-        transition: 0.5s;
+        transition: .5s;
     }    
     button[type="submit"] span::before {
-        content: '\f1d8';
+        /*content: '\f1d8';*/
         font-size: 1.5em;
         opacity: 0;        
         position: absolute;
         top: 0;
         right: 3em;
-        transition: 0.5s;
+        transition: .5s;
     }
     button[type="submit"]:hover span {
         padding-right: 2.5em;

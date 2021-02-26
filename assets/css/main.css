@@ -551,9 +551,9 @@
 			font-weight: 900;
 		}
 
-		.icon.brands:before {
+		/*.icon.brands:before {
 			font-family: 'Font Awesome 5 Brands';
-		}
+		}*/
 
 		.icon.major {
 			width: 2.5em;
@@ -816,7 +816,6 @@
         width: 40%;
     }
     .fb:hover {
-        /*outline-color: blue;*/
         border-color: blue;
     }
     .fb:hover:active {
