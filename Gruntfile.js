@@ -21,7 +21,8 @@ module.exports = function(grunt) {
                     'build/assets/css/critical.css': 'assets/css/critical.css',
                     'build/assets/css/main.css': 'assets/css/main.css',
                     'build/assets/css/about.css': 'assets/css/about.css',
-                    'build/assets/css/noscript.css': 'assets/css/noscript.css'
+                    'build/assets/css/noscript.css': 'assets/css/noscript.css'  //,
+                    // 'assets/css/fontawesome.min.css': 'assets/css/fontawesome.css'
                 }
             }
         },
