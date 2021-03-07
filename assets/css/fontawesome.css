@@ -1,10 +1,12 @@
 @font-face {
   font-family: 'Font Awesome 5 Free';
-  /* src:  url('../fonts/icomoon.woff?5p0vit') format('woff'); */
-  src: url('https://res.cloudinary.com/dff1pf5oi/raw/upload/v1614375221/fonts/icomoon_cpffrt.woff') format('woff');
+  src: url('https://res.cloudinary.com/dff1pf5oi/raw/upload/v1615131670/fonts/icomoon_qviwao.eot') format('embedded-opentype'), /* IE < 11 */
+       url('https://res.cloudinary.com/dff1pf5oi/raw/upload/v1615131670/fonts/icomoon_c4dvmp.ttf') format('truetype'),          /* Safari, Android, iOS */
+       url('https://res.cloudinary.com/dff1pf5oi/raw/upload/v1614375221/fonts/icomoon_cpffrt.woff') format('woff'); /*,*/       /* Modern Browsers + IE11 */
+       /* url('fonts/icomoon.svg?2c14yo#icomoon') format('svg'); */                                                             /* Legacy iOS */
   font-weight: normal;
   font-style: normal;
-  font-display: block; 
+  font-display: block;
 }
 /*
 [class^="icon-"], [class*=" icon-"] {
